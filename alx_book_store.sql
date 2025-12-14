@@ -1,18 +1,18 @@
 -- CREATE DATABASE
 CREATE DATABASE alx_book_store;
 
--- USE DATABASE
+-- SELECT DATABASE
 USE alx_book_store;
 
 -- AUTHORS TABLE
 CREATE TABLE Authors (
-    author_id INT PRIMARY KEY AUTO_INCREMENT,
+    author_id INT AUTO_INCREMENT PRIMARY KEY,
     author_name VARCHAR(215) NOT NULL
 );
 
 -- BOOKS TABLE
 CREATE TABLE Books (
-    book_id INT PRIMARY KEY AUTO_INCREMENT,
+    book_id INT AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(130) NOT NULL,
     author_id INT,
     price DOUBLE,
@@ -22,7 +22,7 @@ CREATE TABLE Books (
 
 -- CUSTOMERS TABLE
 CREATE TABLE Customers (
-    customer_id INT PRIMARY KEY AUTO_INCREMENT,
+    customer_id INT AUTO_INCREMENT PRIMARY KEY,
     customer_name VARCHAR(215) NOT NULL,
     email VARCHAR(215),
     address TEXT
@@ -30,7 +30,7 @@ CREATE TABLE Customers (
 
 -- ORDERS TABLE
 CREATE TABLE Orders (
-    order_id INT PRIMARY KEY AUTO_INCREMENT,
+    order_id INT AUTO_INCREMENT PRIMARY KEY,
     customer_id INT,
     order_date DATE,
     FOREIGN KEY (customer_id) REFERENCES Customers(customer_id)
@@ -38,7 +38,7 @@ CREATE TABLE Orders (
 
 -- ORDER DETAILS TABLE
 CREATE TABLE Order_Details (
-    orderdetailid INT PRIMARY KEY AUTO_INCREMENT,
+    orderdetailid INT AUTO_INCREMENT PRIMARY KEY,
     order_id INT,
     book_id INT,
     quantity DOUBLE,
